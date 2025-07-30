@@ -6,7 +6,7 @@ import { VscBook, VscHome, VscSignOut, VscLibrary } from "react-icons/vsc";
 
 export const Sidebar = () => {
 	return (
-		<section className={styles.wrapper}>
+		<nav className={styles.wrapper}>
 			<section className={styles.content}>
 				<section className={styles.logo}>
 					<Link href="/">
@@ -25,6 +25,6 @@ export const Sidebar = () => {
 					<VscSignOut className={styles.icon} />
 				</section>
 			</section>
-		</section>
+		</nav>
 	);
 };

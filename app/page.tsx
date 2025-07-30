@@ -1,35 +1,16 @@
+import { HomePage } from "@/pages/home";
 import { type Metadata } from "next";
-import { Suspense } from "react";
-
-async function fetchInitialData(): Promise<{
-	title: string;
-	description: string;
-}> {
-	return new Promise((res) => {
-		setTimeout(() => {
-			res({
-				title: "Readriser - home",
-				description:
-					"Readriser is a web application designed to enhance your reading experience.",
-			});
-		}, 50);
-	});
-}
 
 export async function generateMetadata(): Promise<Metadata> {
-	const data = await fetchInitialData();
 	return {
-		title: data.title,
-		description: data.description,
+		title: "Readriser - home",
+		description:
+			"Readriser is a web application designed to enhance your reading experience.",
 	};
 }
 
 const Page = async () => {
-	return (
-		<Suspense fallback={"LOADING........"}>
-			<h1>home page</h1>
-		</Suspense>
-	);
+	return <HomePage />;
 };
 
 export default Page;
