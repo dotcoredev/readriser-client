@@ -16,7 +16,7 @@ export const LoginForm = () => {
 					{
 						type: "email",
 						required: true,
-						message: "Пожалуйста, введите email имя пользователя!",
+						message: "Пожалуйста, введите email пользователя!",
 					},
 				]}
 			>

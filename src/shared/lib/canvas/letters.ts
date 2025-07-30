@@ -40,6 +40,7 @@ class Letter extends Text {
 	private speed: number;
 	private letter: string;
 	private center: { x: number; y: number };
+	private statusRotation: number;
 
 	constructor(app: Application) {
 		super();
@@ -50,7 +51,7 @@ class Letter extends Text {
 			x: this.app.screen.width / 2,
 			y: this.app.screen.height / 2,
 		};
-
+		this.statusRotation = Math.random();
 		this.x = Math.random() * this.app.screen.width;
 		this.y = Math.random() * this.app.screen.height;
 		this.rotation = Math.random() * Math.PI * 2;
@@ -58,10 +59,10 @@ class Letter extends Text {
 	}
 
 	randomTextStyle() {
-		this.style.fill = `hsl(${Math.random() * 120}, ${
-			Math.random() * 10
-		}%, ${Math.random() * 50 + 45}%)`;
-		this.style.fontSize = Math.random() * 25 + 5;
+		this.style.fill = `hsl(${Math.random() * 75}, ${
+			Math.random() * 40 + 40
+		}%, ${Math.random() * 10 + 70}%)`;
+		this.style.fontSize = Math.random() * 30 + 5;
 		this.style.fontFamily =
 			Math.random() < 0.5
 				? "Arial, sans-serif"
@@ -112,6 +113,7 @@ class Letter extends Text {
 		this.y = position!.y;
 		this.speed = Math.random() * 0.1 + 0.1;
 		this.letter = this.getRandomLetter();
+		this.statusRotation = Math.random();
 		this.randomTextStyle();
 	}
 
@@ -126,7 +128,11 @@ class Letter extends Text {
 			const norm = this.speed / dist;
 			this.x += dx * norm;
 			this.y += dy * norm;
-			this.rotation += this.speed * 0.01;
+			if (this.statusRotation > 0.5) {
+				this.rotation += this.speed * 0.01;
+			} else {
+				this.rotation -= this.speed * 0.01;
+			}
 		}
 	}
 }
