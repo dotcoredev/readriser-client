@@ -5,6 +5,7 @@ import {
 	useAppDispatch,
 	useAppSelector,
 } from "@/shared/hooks/redux/redux.hook";
+import styles from "../styles/home.module.scss";
 
 export const HomePage = () => {
 	const dispatch = useAppDispatch();
@@ -15,9 +16,28 @@ export const HomePage = () => {
 	};
 
 	return (
-		<div className="wrapper">
-			555555555555
+		<div className={styles.wrapper}>
 			<h1 onClick={handleClick}>Hello World {value}</h1>
+			<p>
+				This is a simple counter example. This is a simple counter
+				example. This is a simple counter example. This is a simple
+				counter example. This is a simple counter example. This is a
+				simple counter example. This is a simple counter example. This
+				is a simple counter example. This is a simple counter example.
+				This is a simple counter example. This is a simple counter
+				example. This is a simple counter example. This is a simple
+				counter example. This is a simple counter example. This is a
+				simple counter example. This is a simple counter example. This
+				is a simple counter example. This is a simple counter example.
+				This is a simple counter example. This is a simple counter
+				example. This is a simple counter example. This is a simple
+				counter example. This is a simple counter example. This is a
+				simple counter example. This is a simple counter example. This
+				is a simple counter example. This is a simple counter example.
+				This is a simple counter example. This is a simple counter
+				example. This is a simple counter example. This is a simple
+				counter example.{" "}
+			</p>
 		</div>
 	);
 };

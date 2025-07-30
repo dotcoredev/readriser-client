@@ -1,3 +1,5 @@
+// @jsxImportSource react
+import { HomePage } from "@/pages/home";
 import { type Metadata } from "next";
 import { Suspense } from "react";
 
@@ -8,9 +10,9 @@ async function fetchInitialData(): Promise<{
 	return new Promise((res) => {
 		setTimeout(() => {
 			res({
-				title: "Readriser - home",
+				title: "ReadRiser - application",
 				description:
-					"Readriser is a web application designed to enhance your reading experience.",
+					"ReadRiser is a web application designed to enhance your reading experience.",
 			});
 		}, 50);
 	});
@@ -27,7 +29,28 @@ export async function generateMetadata(): Promise<Metadata> {
 const Page = async () => {
 	return (
 		<Suspense fallback={"LOADING........"}>
-			<h1>home page</h1>
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
+			<HomePage />
 		</Suspense>
 	);
 };

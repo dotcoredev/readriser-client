@@ -1,1 +1,1 @@
-export { ProvidersLayout as default } from "@/app/layouts/providers.layout";
+export { MainLayout as default } from "@/app/layouts";

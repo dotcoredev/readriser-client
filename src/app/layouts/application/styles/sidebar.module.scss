@@ -1,0 +1,95 @@
+.wrapper {
+	width: 100%;
+	grid-area: sidebar;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.content {
+		width: calc(100% - 20px);
+		height: calc(100% - 10px);
+		border-radius: 55px;
+		background-color: #000000;
+		display: grid;
+		grid-template-rows: 115px 1fr 100px;
+		grid-template-areas:
+			"logo"
+			"menu"
+			"auth";
+
+		.logo {
+			grid-area: logo;
+			width: 60px;
+			height: 60px;
+			margin: 10px auto;
+			border-radius: 50%;
+			overflow: hidden;
+			background-color: orangered;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			a {
+				width: fit-content;
+				height: 30px;
+
+				.icon {
+					color: #fff;
+					font-size: 30px;
+				}
+			}
+		}
+
+		.menu {
+			grid-area: menu;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			gap: 10px;
+
+			a {
+				width: 40px;
+				height: 40px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: #fff;
+				opacity: 0.5;
+				border: 1px solid transparent;
+				border-radius: 50%;
+				transition: 0.3s all;
+
+				&:hover {
+					color: orangered;
+					opacity: 1;
+					border: 1px solid orangered;
+				}
+
+				.icon {
+					font-size: 17px;
+				}
+			}
+		}
+
+		.auth {
+			grid-area: auth;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #fff;
+			cursor: pointer;
+
+			.icon {
+				color: orangered;
+				opacity: 0.5;
+				transition: 0.3s all;
+			}
+
+			&:hover .icon {
+				opacity: 1;
+			}
+		}
+	}
+}
