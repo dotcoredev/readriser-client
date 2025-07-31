@@ -1,12 +1,17 @@
-import { Spin } from "antd";
-import { AiOutlineLoading } from "react-icons/ai";
-import styles from "../styles/loader.module.scss";
-import { FC } from "react";
+"use client";
 
-export const Loader: FC<{ status: boolean }> = ({ status }) => {
+import { FC } from "react";
+import styles from "../styles/loader.module.scss";
+import dynamic from "next/dynamic";
+
+const PuffLoader = dynamic(() => import("react-spinners/PuffLoader"), {
+	ssr: false,
+});
+
+export const Loader: FC = () => {
 	return (
-		<div className={`${styles.wrapper} ${status ? styles.loaded : ""}`}>
-			<Spin indicator={<AiOutlineLoading style={{ fontSize: 48 }} />} />
+		<div className={styles.wrapper}>
+			<PuffLoader color="#686868" size={60} />
 		</div>
 	);
 };

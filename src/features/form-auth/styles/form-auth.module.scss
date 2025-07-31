@@ -1,17 +1,17 @@
 .wrapper {
 	width: 400px;
-	height: 500px;
-	background-color: #efeae5;
+	height: auto;
 	border-radius: 9px;
 	box-shadow: 0 0 50px rgba(0, 0, 0, 0.08);
 	box-sizing: border-box;
-	padding: 15px;
+	padding: 100px 15px;
 	color: #333;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	text-align: center;
+	backdrop-filter: blur(7px);
 
 	.iconWrapper {
 		width: 100px;
@@ -32,5 +32,6 @@
 
 	.form {
 		width: 100%;
+		position: relative;
 	}
 }

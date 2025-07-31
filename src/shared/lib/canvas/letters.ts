@@ -41,15 +41,19 @@ class Letter extends Text {
 	private letter: string;
 	private center: { x: number; y: number };
 	private statusRotation: number;
+	private elementGravity: HTMLDivElement;
 
 	constructor(app: Application) {
 		super();
+		this.elementGravity = document.getElementById(
+			"avatarUser"
+		) as HTMLDivElement;
 		this.app = app;
 		this.speed = Math.random() * 0.1 + 0.045;
 		this.letter = this.getRandomLetter();
 		this.center = {
-			x: this.app.screen.width / 2,
-			y: this.app.screen.height / 2,
+			x: this.elementGravity.getBoundingClientRect().x + 50,
+			y: this.elementGravity.getBoundingClientRect().y + 50,
 		};
 		this.statusRotation = Math.random();
 		this.x = Math.random() * this.app.screen.width;
@@ -118,11 +122,16 @@ class Letter extends Text {
 	}
 
 	update() {
+		this.center = {
+			x: this.elementGravity.getBoundingClientRect().x + 50,
+			y: this.elementGravity.getBoundingClientRect().y + 50,
+		};
+
 		const dx = this.center.x - this.x;
 		const dy = this.center.y - this.y;
 		const dist = Math.sqrt(dx * dx + dy * dy);
 
-		if (dist < 170) {
+		if (dist < 0.3) {
 			this.randonomizePosition();
 		} else {
 			const norm = this.speed / dist;
