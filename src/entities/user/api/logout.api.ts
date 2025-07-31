@@ -1,30 +1,27 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { SigninFormValues, SigninResponse } from "../model/user.model";
 import { axios } from "@/shared/lib/axios";
 import { ApiUserMethods } from "../constants/api-user-methods.constant";
 import { handlingErrors } from "@/shared/utils/handlingErrors/handling-errors";
+import { useRouter } from "next/navigation";
 
-const signinRequest = async (payload: SigninFormValues) => {
+const logoutRequest = async () => {
 	try {
-		const response = await axios.post<SigninResponse>(
-			ApiUserMethods.SIGNIN,
-			payload
-		);
-		return response.data;
+		await axios.post<boolean>(ApiUserMethods.LOGOUT);
+		return true;
 	} catch (error: unknown) {
 		return handlingErrors(error);
 	}
 };
 
-export const useSignin = () => {
+export const useLogout = () => {
 	const queryClient = useQueryClient();
+	const router = useRouter();
 
 	return useMutation({
-		mutationFn: signinRequest,
+		mutationFn: logoutRequest,
 		onSuccess: () => {
-			queryClient.invalidateQueries({
-				queryKey: ["profile"],
-			});
+			queryClient.setQueryData(["profile"], null);
+			router.push("/");
 		},
 	});
 };

@@ -1,5 +1,3 @@
-"use client";
-
 import { FC } from "react";
 import styles from "../styles/loader.module.scss";
 import dynamic from "next/dynamic";

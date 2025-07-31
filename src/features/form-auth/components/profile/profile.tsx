@@ -1,9 +1,32 @@
-export const Profile = () => {
+import { useLogout } from "@/entities/user/api/logout.api";
+import { User } from "@/entities/user/model/user.model";
+import { Button, Flex, Typography } from "antd";
+import Link from "next/link";
+import { FC } from "react";
+
+export const Profile: FC<{ profile: User }> = ({ profile }) => {
+	const { mutate, isPending } = useLogout();
+
+	const logout = () => {
+		if (isPending) return;
+		mutate();
+	};
+
 	return (
 		<div className="wrapper">
-			<h1>Profile</h1>
-			<p>This is the user profile page.</p>
-			{/* Additional profile details can be added here */}
+			<Flex align="center" gap={3} vertical>
+				<Typography.Text>@{profile.login}</Typography.Text>
+				<Typography.Text>{profile.email}</Typography.Text>
+				<Flex gap={5}>
+					<Link href="/dashboard">
+						<Button>Перейти в профиль</Button>
+					</Link>
+
+					<Button danger onClick={logout}>
+						Выход
+					</Button>
+				</Flex>
+			</Flex>
 		</div>
 	);
 };

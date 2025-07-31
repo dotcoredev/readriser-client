@@ -6,13 +6,19 @@ export interface User {
 	login: string;
 	createdAt: string;
 	role: UserRole;
+	avatar: File;
 }
 
-export interface UserRole {
+interface UserRole {
 	_id: string;
 	role: string;
 	access: string;
 	description?: string;
+}
+
+interface File {
+	_id: string;
+	url: string;
 }
 
 export interface SigninResponse {

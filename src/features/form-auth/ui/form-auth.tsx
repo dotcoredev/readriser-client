@@ -28,7 +28,7 @@ export const FormAuth = () => {
 				{isPending ? (
 					<Loader />
 				) : profile ? (
-					<Profile />
+					<Profile profile={profile} />
 				) : (
 					<SigninForm />
 				)}

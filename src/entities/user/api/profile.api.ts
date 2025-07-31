@@ -22,5 +22,21 @@ export const useProfile = () =>
 		queryFn: profileRequest,
 		refetchOnMount: false,
 		refetchInterval: false,
+		enabled: true,
 		retry: false,
 	});
+
+export const checkProfileRequest = async (
+	accessToken: string | null = ""
+): Promise<boolean> => {
+	try {
+		await axios.get<User>(ApiUserMethods.GET_PROFILE, {
+			headers: {
+				Authorization: accessToken,
+			},
+		});
+		return true;
+	} catch {
+		return false;
+	}
+};

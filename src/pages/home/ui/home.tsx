@@ -11,15 +11,13 @@ export const HomePage = () => {
 	const [canvasActive, setCanvasActive] = useState<boolean>(false);
 
 	const canvasCallback = useCallback(async (element: HTMLDivElement) => {
-		const init = await canvas.current.init(element);
-		init.run();
+		await canvas.current.init(element);
 		setCanvasActive(true);
 	}, []);
 
 	useEffect(() => {
-		if (canvasRef.current) {
-			canvasCallback(canvasRef.current);
-		}
+		if (!canvasRef.current) return;
+		canvasCallback(canvasRef.current);
 	}, [canvasCallback]);
 
 	return (

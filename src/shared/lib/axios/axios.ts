@@ -16,7 +16,6 @@ instance.interceptors.response.use(
 				await instance.post(`/auth/refresh`);
 				return instance(originalRequest);
 			} catch (refreshError) {
-				console.error("Token refresh failed:", refreshError);
 				return Promise.reject(refreshError);
 			}
 		}
