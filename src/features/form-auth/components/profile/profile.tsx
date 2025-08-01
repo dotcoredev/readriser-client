@@ -19,10 +19,17 @@ export const Profile: FC<{ profile: User }> = ({ profile }) => {
 				<Typography.Text>{profile.email}</Typography.Text>
 				<Flex gap={5}>
 					<Link href="/dashboard">
-						<Button>Перейти в профиль</Button>
+						<Button variant="filled" type="primary">
+							Перейти в профиль
+						</Button>
 					</Link>
 
-					<Button danger onClick={logout}>
+					<Button
+						danger
+						variant="filled"
+						type="primary"
+						onClick={logout}
+					>
 						Выход
 					</Button>
 				</Flex>

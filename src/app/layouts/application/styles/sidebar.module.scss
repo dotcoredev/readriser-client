@@ -71,6 +71,12 @@
 					font-size: 17px;
 				}
 			}
+
+			.active {
+				color: orangered;
+				opacity: 1;
+				border: 1px solid orangered;
+			}
 		}
 
 		.auth {

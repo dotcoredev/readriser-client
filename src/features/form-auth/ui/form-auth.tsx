@@ -3,6 +3,8 @@ import { AiOutlineUser } from "react-icons/ai";
 import { useProfile } from "@/entities/user/api/profile.api";
 import { Loader } from "@/shared/ui/loader";
 import dynamic from "next/dynamic";
+import { useCallback, useState } from "react";
+import { SignupForm } from "../components/signup-form/signup-form";
 
 const Profile = dynamic(() =>
 	import("../components/profile/profile").then((module) => ({
@@ -18,6 +20,11 @@ const SigninForm = dynamic(() =>
 
 export const FormAuth = () => {
 	const { data: profile, isPending } = useProfile();
+	const [formType, setFormType] = useState<"signin" | "signup">("signin");
+
+	const changeForm = useCallback((type: "signin" | "signup") => {
+		setFormType(type);
+	}, []);
 
 	return (
 		<section className={styles.wrapper}>
@@ -29,8 +36,10 @@ export const FormAuth = () => {
 					<Loader />
 				) : profile ? (
 					<Profile profile={profile} />
+				) : formType === "signup" ? (
+					<SignupForm changeForm={changeForm} />
 				) : (
-					<SigninForm />
+					<SigninForm changeForm={changeForm} />
 				)}
 			</section>
 		</section>

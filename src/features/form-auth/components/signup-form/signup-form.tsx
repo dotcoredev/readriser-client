@@ -1,16 +1,16 @@
-import { useSignin } from "@/entities/user/api/signin.api";
-import { SigninFormValues } from "@/entities/user/model/user.model";
+import { useSignup } from "@/entities/user/api/signup.api";
+import { SignupFormValues } from "@/entities/user/model/user.model";
 import { Button, Flex, FormProps, Form, Input, Typography, Space } from "antd";
 import { FC, memo } from "react";
 import { AiFillLock, AiOutlineUser } from "react-icons/ai";
 
-const SigninFormComponent: FC<{
+export const SignupFormComponent: FC<{
 	changeForm: (type: "signin" | "signup") => void;
 }> = ({ changeForm }) => {
 	const [form] = Form.useForm();
-	const { mutate, error, isError, isPending } = useSignin();
+	const { mutate, error, isError, isPending } = useSignup();
 
-	const onFinish: FormProps<SigninFormValues>["onFinish"] = (values) => {
+	const onFinish: FormProps<SignupFormValues>["onFinish"] = (values) => {
 		if (isPending) return;
 		mutate(values, {
 			onError: (error: Error) => {
@@ -41,6 +41,22 @@ const SigninFormComponent: FC<{
 				/>
 			</Form.Item>
 			<Form.Item
+				name="login"
+				style={{ width: "100%" }}
+				rules={[
+					{
+						required: true,
+						message: "Пожалуйста, введите логин пользователя!",
+					},
+				]}
+			>
+				<Input
+					style={{ width: "100%" }}
+					prefix={<AiOutlineUser />}
+					placeholder="login"
+				/>
+			</Form.Item>
+			<Form.Item
 				name="password"
 				rules={[
 					{
@@ -57,6 +73,22 @@ const SigninFormComponent: FC<{
 					placeholder="Пароль"
 				/>
 			</Form.Item>
+			<Form.Item
+				name="repeat_password"
+				rules={[
+					{
+						required: true,
+						min: 6,
+						message: "Пожалуйста, повторите пароль!",
+					},
+				]}
+			>
+				<Input
+					prefix={<AiFillLock />}
+					type="password"
+					placeholder="Повторите пароль"
+				/>
+			</Form.Item>
 
 			{isError && (
 				<Space>
@@ -68,7 +100,7 @@ const SigninFormComponent: FC<{
 
 			<Form.Item>
 				<Button block type="primary" htmlType="submit" variant="filled">
-					{isPending ? "Вход..." : "Войти"}
+					{isPending ? "Подождите..." : "Зарегистрироваться"}
 				</Button>
 			</Form.Item>
 
@@ -78,9 +110,9 @@ const SigninFormComponent: FC<{
 						color="default"
 						variant="link"
 						size="small"
-						onClick={() => changeForm("signup")}
+						onClick={() => changeForm("signin")}
 					>
-						Зарегистрироваться сейчас!
+						Авторизоваться
 					</Button>
 				</Flex>
 			</Space>
@@ -88,4 +120,4 @@ const SigninFormComponent: FC<{
 	);
 };
 
-export const SigninForm = memo(SigninFormComponent);
+export const SignupForm = memo(SignupFormComponent);

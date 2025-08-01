@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import styles from "../styles/sidebar.module.scss";
-import { VscBook, VscHome, VscSignOut, VscLibrary } from "react-icons/vsc";
+import { VscBook, VscSignOut } from "react-icons/vsc";
 import { useLogout } from "@/entities/user/api/logout.api";
+import { MenuList } from "../components/menu-list";
 
 export const Sidebar = () => {
 	const { mutate, isPending } = useLogout();
@@ -22,12 +23,7 @@ export const Sidebar = () => {
 					</Link>
 				</section>
 				<section className={styles.menu}>
-					<Link href="/app">
-						<VscHome className={styles.icon} />
-					</Link>
-					<Link href="/app/library">
-						<VscLibrary className={styles.icon} />
-					</Link>
+					<MenuList />
 				</section>
 				<section className={styles.auth} onClick={logout}>
 					<VscSignOut className={styles.icon} />

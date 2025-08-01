@@ -29,3 +29,14 @@ export interface SigninFormValues {
 	email: string;
 	password: string;
 }
+
+export interface SignupFormValues {
+	email: string;
+	login: string;
+	password: string;
+	repeat_password: string;
+}
+
+export interface SignupResponse {
+	accessToken: string;
+}
