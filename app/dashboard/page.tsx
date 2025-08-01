@@ -5,7 +5,7 @@ import { Suspense } from "react";
 
 export async function generateMetadata(): Promise<Metadata> {
 	return {
-		title: "ReadRiser - application",
+		title: "ReadRiser - dashboard",
 		description:
 			"ReadRiser is a web application designed to enhance your reading experience.",
 	};

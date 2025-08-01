@@ -18,7 +18,7 @@ export const Sidebar = () => {
 		<nav className={styles.wrapper}>
 			<section className={styles.content}>
 				<section className={styles.logo}>
-					<Link href="/">
+					<Link href="/dashboard">
 						<VscBook className={styles.icon} />
 					</Link>
 				</section>

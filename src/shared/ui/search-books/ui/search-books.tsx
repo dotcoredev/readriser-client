@@ -9,9 +9,10 @@ export const SearchBooks = () => {
 	};
 	return (
 		<Search
-			placeholder="input search text"
+			variant="filled"
+			placeholder="Поиск по названию книги или автора"
 			onSearch={onSearch}
-			size="middle"
+			size="large"
 		/>
 	);
 };

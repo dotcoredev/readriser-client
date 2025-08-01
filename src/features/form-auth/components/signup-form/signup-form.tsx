@@ -22,7 +22,13 @@ export const SignupFormComponent: FC<{
 	};
 
 	return (
-		<Form form={form} name="login" onFinish={onFinish} size="large">
+		<Form
+			form={form}
+			name="login"
+			onFinish={onFinish}
+			size="large"
+			variant="underlined"
+		>
 			<Form.Item
 				name="email"
 				style={{ width: "100%" }}
