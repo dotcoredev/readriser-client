@@ -16,13 +16,13 @@ const profileRequest = async (): Promise<User> => {
 	}
 };
 
-export const useProfile = () =>
+export const useProfile = (isAuthenticated: boolean = false) =>
 	useQuery({
 		queryKey: ["profile"],
 		queryFn: profileRequest,
 		refetchOnMount: false,
 		refetchInterval: false,
-		enabled: true,
+		enabled: isAuthenticated,
 		retry: false,
 	});
 

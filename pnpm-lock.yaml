@@ -59,6 +59,9 @@ importers:
       redux-logger:
         specifier: ^3.0.6
         version: 3.0.6
+      redux-persist:
+        specifier: ^6.0.0
+        version: 6.0.0(react@19.1.0)(redux@5.0.1)
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3
@@ -84,6 +87,9 @@ importers:
       '@types/redux-logger':
         specifier: ^3.0.13
         version: 3.0.13
+      '@types/redux-persist':
+        specifier: ^4.3.1
+        version: 4.3.1(react@19.1.0)(redux@5.0.1)
       eslint:
         specifier: ^9
         version: 9.32.0(jiti@2.5.1)
@@ -638,6 +644,10 @@ packages:
 
   '@types/redux-logger@3.0.13':
     resolution: {integrity: sha512-jylqZXQfMxahkuPcO8J12AKSSCQngdEWQrw7UiLUJzMBcv1r4Qg77P6mjGLjM27e5gFQDPD8vwUMJ9AyVxFSsg==}
+
+  '@types/redux-persist@4.3.1':
+    resolution: {integrity: sha512-YkMnMUk+4//wPtiSTMfsxST/F9Gh9sPWX0LVxHuOidGjojHtMdpep2cYvQgfiDMnj34orXyZI+QJCQMZDlafKA==}
+    deprecated: This is a stub types definition for redux-persist (https://github.com/rt2zz/redux-persist). redux-persist provides its own type definitions, so you don't need @types/redux-persist installed!
 
   '@types/use-sync-external-store@0.0.6':
     resolution: {integrity: sha512-zFDAD+tlpf2r4asuHEj0XH6pY6i0g5NeAHPn+15wk3BV6JA69eERFXC1gyGThDkVa1zCyKr5jox1+2LbV/AMLg==}
@@ -2005,6 +2015,15 @@ packages:
   redux-logger@3.0.6:
     resolution: {integrity: sha512-JoCIok7bg/XpqA1JqCqXFypuqBbQzGQySrhFzewB7ThcnysTO30l4VCst86AuB9T9tuT03MAA56Jw2PNhRSNCg==}
 
+  redux-persist@6.0.0:
+    resolution: {integrity: sha512-71LLMbUq2r02ng2We9S215LtPu3fY0KgaGE0k8WRgl6RkqxtGfl7HUozz1Dftwsb0D/5mZ8dwAaPbtnzfvbEwQ==}
+    peerDependencies:
+      react: '>=16'
+      redux: '>4.0.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
+
   redux-thunk@3.1.0:
     resolution: {integrity: sha512-NW2r5T6ksUKXCabzhL9z+h206HQw/NJkcLm1GPImRQ8IzfXwRGqjVhKJGauHirT0DAuyy6hjdnMZaRoAcy0Klw==}
     peerDependencies:
@@ -2784,6 +2803,13 @@ snapshots:
   '@types/redux-logger@3.0.13':
     dependencies:
       redux: 5.0.1
+
+  '@types/redux-persist@4.3.1(react@19.1.0)(redux@5.0.1)':
+    dependencies:
+      redux-persist: 6.0.0(react@19.1.0)(redux@5.0.1)
+    transitivePeerDependencies:
+      - react
+      - redux
 
   '@types/use-sync-external-store@0.0.6': {}
 
@@ -4462,6 +4488,12 @@ snapshots:
   redux-logger@3.0.6:
     dependencies:
       deep-diff: 0.3.8
+
+  redux-persist@6.0.0(react@19.1.0)(redux@5.0.1):
+    dependencies:
+      redux: 5.0.1
+    optionalDependencies:
+      react: 19.1.0
 
   redux-thunk@3.1.0(redux@5.0.1):
     dependencies:

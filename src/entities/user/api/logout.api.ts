@@ -3,6 +3,8 @@ import { axios } from "@/shared/lib/axios";
 import { ApiUserMethods } from "../constants/api-user-methods.constant";
 import { handlingErrors } from "@/shared/utils/handlingErrors/handling-errors";
 import { useRouter } from "next/navigation";
+import { useAppDispatch } from "@/shared/hooks/redux/redux.hook";
+import { logout } from "../model/auth.slice";
 
 const logoutRequest = async () => {
 	try {
@@ -14,6 +16,7 @@ const logoutRequest = async () => {
 };
 
 export const useLogout = () => {
+	const dispatch = useAppDispatch();
 	const queryClient = useQueryClient();
 	const router = useRouter();
 
@@ -21,6 +24,7 @@ export const useLogout = () => {
 		mutationFn: logoutRequest,
 		onSuccess: () => {
 			queryClient.setQueryData(["profile"], null);
+			dispatch(logout());
 			router.push("/");
 		},
 	});

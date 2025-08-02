@@ -16,6 +16,7 @@ export const MenuList = () => {
 					<Link
 						key={href}
 						href={href}
+						prefetch={true}
 						className={
 							pathnameRegexp(href, pathname) ? styles.active : ""
 						}

@@ -59,7 +59,7 @@ export const SignupFormComponent: FC<{
 				<Input
 					style={{ width: "100%" }}
 					prefix={<AiOutlineUser />}
-					placeholder="login"
+					placeholder="Логин"
 				/>
 			</Form.Item>
 			<Form.Item

@@ -10,7 +10,7 @@ export const SearchBooks = () => {
 	return (
 		<Search
 			variant="filled"
-			placeholder="Поиск по названию книги или автора"
+			placeholder="Поиск по вашей библиотеке"
 			onSearch={onSearch}
 			size="large"
 		/>
