@@ -1,3 +1,5 @@
+"use client";
+
 import { MenuItem, menuList } from "@/shared/config/menu.config";
 import { pathnameRegexp } from "@/shared/utils/pathname/pathnema";
 import Link from "next/link";
@@ -8,6 +10,7 @@ import { Tooltip } from "antd";
 
 export const MenuList = () => {
 	const pathname = usePathname() as string;
+	console.log("Current pathname:", pathname);
 
 	return (
 		<Fragment>

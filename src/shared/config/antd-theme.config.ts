@@ -14,6 +14,7 @@ export const antdThemeConfig: ThemeConfig = {
 		colorError: "#f5222d",
 		colorTextBase: "#000000",
 		colorBgBase: "#efeae5",
+		colorLink: "#a5531c",
 		boxShadow: "0 0 40px rgba(0, 0, 0, 0.07)",
 		padding: 10,
 	},

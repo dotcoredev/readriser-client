@@ -15,29 +15,6 @@ const Page = async () => {
 	return (
 		<Suspense fallback={"LOADING........"}>
 			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
-			<DashboardPage />
 		</Suspense>
 	);
 };
