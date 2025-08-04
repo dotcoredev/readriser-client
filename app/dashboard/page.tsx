@@ -26,6 +26,18 @@ const Page = async () => {
 			<DashboardPage />
 			<DashboardPage />
 			<DashboardPage />
+			<DashboardPage />
+			<DashboardPage />
+			<DashboardPage />
+			<DashboardPage />
+			<DashboardPage />
+			<DashboardPage />
+			<DashboardPage />
+			<DashboardPage />
+			<DashboardPage />
+			<DashboardPage />
+			<DashboardPage />
+			<DashboardPage />
 		</Suspense>
 	);
 };

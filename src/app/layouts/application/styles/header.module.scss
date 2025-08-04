@@ -1,12 +1,12 @@
 .wrapper {
 	width: 100%;
 	height: auto;
-	background-color: #efeae5;
+	background-color: var(--color-bg-base);
 	padding: 15px 10px;
 	box-sizing: border-box;
-	border-radius: 10px;
-	box-shadow: 0 0 40px rgba(0, 0, 0, 0.07);
-	margin: 15px 0;
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+	margin: 20px 0;
 
 	.content {
 		width: 100%;
