@@ -6,8 +6,7 @@
 	box-sizing: border-box;
 	border-radius: var(--border-radius);
 	box-shadow: var(--box-shadow);
-	margin: 20px 0;
-	backdrop-filter: blur(14px);
+	background-color: var(--color-bg-base);
 
 	.content {
 		width: 100%;

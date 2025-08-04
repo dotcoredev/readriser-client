@@ -1,4 +1,4 @@
-import { Typography, Flex } from "antd";
+import { Typography, Flex, Card } from "antd";
 import styles from "../styles/recomendation-books.module.scss";
 import { FC } from "react";
 import { BookItem } from "../components/book-item";
@@ -9,6 +9,7 @@ export const RecomendationBooks: FC<{ title?: string }> = ({
 	return (
 		<section className={styles.wrapper}>
 			<Typography.Title level={4}>{title}</Typography.Title>
+
 			<Flex gap={20} wrap="wrap">
 				<BookItem
 					book={{

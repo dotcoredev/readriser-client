@@ -8,7 +8,45 @@
 	box-shadow: var(--box-shadow);
 
 	.bookItem {
+		transform: translateY(0);
 		border-radius: var(--border-radius);
-		box-shadow: var(--box-shadow);
+		position: relative;
+		cursor: pointer;
+		transition: 0.3s all;
+
+		&:hover {
+			transform: translateY(-10px);
+			z-index: 100;
+
+			&:after {
+				content: "";
+				transform: translateY(-40px);
+				box-shadow: 0 45px 45px rgba(0, 0, 0, 0.3);
+			}
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 50%;
+			box-shadow: 0 45px 40px rgba(0, 0, 0, 0);
+			transform: translateY(-55px);
+			border-radius: var(--border-radius);
+			z-index: -1;
+			transition: 0.3s all;
+		}
+
+		.bookCover {
+			border-radius: var(--border-radius);
+			box-shadow: var(--box-shadow);
+			border-radius: var(--border-radius);
+			max-height: 300px;
+			width: 200px;
+			height: auto;
+			object-fit: cover;
+		}
 	}
 }
