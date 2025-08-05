@@ -1,0 +1,16 @@
+.wrapper {
+	margin: 20px 0;
+	padding: var(--padding);
+	border-radius: var(--border-radius);
+	box-sizing: border-box;
+	width: 100%;
+	background-color: var(--color-bg-base);
+	box-shadow: var(--box-shadow);
+
+	.header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+}

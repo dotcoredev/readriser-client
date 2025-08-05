@@ -1,15 +1,13 @@
-import { Typography } from "antd";
 import styles from "../styles/recomendation-books.module.scss";
 import { FC } from "react";
 import { BookItem } from "../components/book-item";
+import { WidgetLayout } from "@/shared/layouts/widget";
 
 export const RecomendationBooks: FC<{ title?: string }> = ({
 	title = "Рекомендуемые книги",
 }) => {
 	return (
-		<section className={styles.wrapper}>
-			<Typography.Title level={4}>{title}</Typography.Title>
-
+		<WidgetLayout title={title}>
 			<section className={styles.booksList}>
 				<BookItem
 					book={{
@@ -47,6 +45,6 @@ export const RecomendationBooks: FC<{ title?: string }> = ({
 					}}
 				/>
 			</section>
-		</section>
+		</WidgetLayout>
 	);
 };
