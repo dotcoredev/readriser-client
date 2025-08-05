@@ -1,19 +1,16 @@
 "use client";
 
-import { Image, Space, Typography } from "antd";
+import { Image, Typography } from "antd";
 import styles from "../styles/recomendation-books.module.scss";
-import { FC, memo, SyntheticEvent, useState } from "react";
+import { FC, memo } from "react";
 import { BookProps } from "../interfaces/book.interface";
 import { useRouter } from "next/navigation";
 
 const BookItemComponent: FC<{ book: BookProps }> = ({ book }) => {
-	const [imageWidth, setImageWidth] = useState<number>(0);
 	const router = useRouter();
 
 	return (
-		<Space
-			direction="vertical"
-			align="center"
+		<section
 			className={styles.bookItem}
 			onClick={() => router.push(book.link)}
 			title={book.title}
@@ -23,17 +20,11 @@ const BookItemComponent: FC<{ book: BookProps }> = ({ book }) => {
 				loading="lazy"
 				preview={false}
 				alt="book-1"
-				//height={300}
+				height={350}
 				src={book.image}
-				onLoad={(data: SyntheticEvent<HTMLDivElement>) => {
-					const target = data.target as HTMLImageElement;
-					setImageWidth(target.width);
-				}}
 			/>
-			<Typography.Text style={{ width: imageWidth }} ellipsis={true}>
-				{book.title}
-			</Typography.Text>
-		</Space>
+			<Typography.Link ellipsis={true}>{book.title}</Typography.Link>
+		</section>
 	);
 };
 

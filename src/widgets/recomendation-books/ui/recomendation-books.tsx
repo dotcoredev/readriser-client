@@ -1,4 +1,4 @@
-import { Typography, Flex, Card } from "antd";
+import { Typography } from "antd";
 import styles from "../styles/recomendation-books.module.scss";
 import { FC } from "react";
 import { BookItem } from "../components/book-item";
@@ -10,7 +10,7 @@ export const RecomendationBooks: FC<{ title?: string }> = ({
 		<section className={styles.wrapper}>
 			<Typography.Title level={4}>{title}</Typography.Title>
 
-			<Flex gap={20} wrap="wrap">
+			<section className={styles.booksList}>
 				<BookItem
 					book={{
 						title: "Книга 1: Заголовок Заголовок Заголовок Заголовок",
@@ -35,25 +35,18 @@ export const RecomendationBooks: FC<{ title?: string }> = ({
 				<BookItem
 					book={{
 						title: "Книга 1: Заголовок Заголовок Заголовок Заголовок",
-						image: "/images/book-4.webp",
+						image: "/images/book-1.jpg",
 						link: "/dashboard/library/book/book-1",
 					}}
 				/>
 				<BookItem
 					book={{
 						title: "Книга 1: Заголовок Заголовок Заголовок Заголовок",
-						image: "/images/book-5.jpg",
+						image: "/images/book-2.webp",
 						link: "/dashboard/library/book/book-1",
 					}}
 				/>
-				<BookItem
-					book={{
-						title: "Книга 1: Заголовок Заголовок Заголовок Заголовок",
-						image: "/images/book-6.webp",
-						link: "/dashboard/library/book/book-1",
-					}}
-				/>
-			</Flex>
+			</section>
 		</section>
 	);
 };

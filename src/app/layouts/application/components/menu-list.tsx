@@ -15,7 +15,12 @@ export const MenuList = () => {
 	return (
 		<Fragment>
 			{menuList.map(({ href, icon: Icon, title }: MenuItem) => (
-				<Tooltip title={title} key={title} placement="right">
+				<Tooltip
+					title={title}
+					key={title}
+					placement="right"
+					zIndex={3000}
+				>
 					<Link
 						key={href}
 						href={href}
