@@ -1,11 +1,12 @@
 .wrapper {
-	margin: 20px 0;
+	margin: 0;
 	padding: var(--padding);
 	border-radius: var(--border-radius);
 	box-sizing: border-box;
 	width: 100%;
 	background-color: var(--color-bg-base);
 	box-shadow: var(--box-shadow);
+	display: inline-block;
 
 	.header {
 		display: flex;
