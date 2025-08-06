@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { axios } from "@/shared/lib/axios";
-import { ApiUserMethods } from "../constants/api-user-methods.constant";
+import { ApiUserMethods } from "../constants/api-user-methods";
 import { handlingErrors } from "@/shared/utils/handlingErrors/handling-errors";
 import { useRouter } from "next/navigation";
 import { useAppDispatch } from "@/shared/hooks/redux/redux.hook";

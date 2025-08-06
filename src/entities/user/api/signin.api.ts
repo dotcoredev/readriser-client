@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { SigninFormValues, SigninResponse } from "../model/user.model";
 import { axios } from "@/shared/lib/axios";
-import { ApiUserMethods } from "../constants/api-user-methods.constant";
+import { ApiUserMethods } from "../constants/api-user-methods";
 import { handlingErrors } from "@/shared/utils/handlingErrors/handling-errors";
 import { useAppDispatch } from "@/shared/hooks/redux/redux.hook";
 import { login } from "../model/auth.slice";

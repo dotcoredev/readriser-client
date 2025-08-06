@@ -22,5 +22,10 @@ export const antdThemeConfig: ThemeConfig = {
 		Button: {
 			algorithm: true,
 		},
+		Notification: {
+			zIndexBase: 100000,
+			zIndexPopup: 100000,
+			zIndexPopupBase: 100000,
+		},
 	},
 };

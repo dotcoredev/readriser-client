@@ -16,7 +16,7 @@ interface UserRole {
 	description?: string;
 }
 
-interface File {
+export interface File {
 	_id: string;
 	url: string;
 }

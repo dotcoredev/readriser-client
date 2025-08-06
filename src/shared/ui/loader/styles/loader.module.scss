@@ -11,6 +11,7 @@
 	left: 0;
 	z-index: 2000;
 	opacity: 1;
+	border-radius: var(--border-radius);
 	transition: opacity 2s;
 }
 

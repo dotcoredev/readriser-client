@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { User } from "../model/user.model";
 import { axios } from "@/shared/lib/axios";
 import { isAxiosError } from "axios";
-import { ApiUserMethods } from "../constants/api-user-methods.constant";
+import { ApiUserMethods } from "../constants/api-user-methods";
 
 const profileRequest = async (): Promise<User> => {
 	try {
