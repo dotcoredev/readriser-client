@@ -21,3 +21,7 @@ export interface BookCategoryFormValues {
 	title: string;
 	cover?: File | null;
 }
+
+export interface DeleteBookCategoryValues {
+	category_id: string;
+}

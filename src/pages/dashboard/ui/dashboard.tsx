@@ -2,6 +2,7 @@
 import { RecomendationBooks } from "@/widgets/recomendation-books";
 import styles from "../styles/dashboard.module.scss";
 import { BookCategories } from "@/widgets/book-categories";
+import { Library } from "@/widgets/library";
 
 export const DashboardPage = () => {
 	return (
@@ -9,7 +10,7 @@ export const DashboardPage = () => {
 			<RecomendationBooks title="Рекомендуемые книги из библиотеки" />
 			<section className={styles.categoriesAndInformation}>
 				<section className={styles.left}>
-					<RecomendationBooks title="Рекомендуемые книги из библиотеки" />
+					<Library title="Библиотека" />
 				</section>
 				<section className={styles.right}>
 					<BookCategories title="Категории книг" />
